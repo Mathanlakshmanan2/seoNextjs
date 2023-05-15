@@ -14,6 +14,8 @@ export default ({ children, title = 'Next.js Ecommerce' }: LayoutType) => {
   return (
     <div className="app-main">
       <Head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{ title }</title>
         <meta name="description" content="Get powerful prescription medications from our online store - all without leaving your home! All of our medications come with a 100% satisfaction guarantee."/>
         <meta property="og:title" content="medicine | drug stores near me	| weight loss | tarnea | madurai | bangolore | online medicals madurai"/>

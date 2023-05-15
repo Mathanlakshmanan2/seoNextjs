@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nextjsseo.000webhostapp.com/
+
+# Sitemaps
+Sitemap: https://nextjsseo.000webhostapp.com/sitemap.xml
