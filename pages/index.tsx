@@ -3,9 +3,15 @@ import PageIntro from '../components/page-intro';
 import ProductsFeatured from '../components/products-featured';
 import Footer from '../components/footer';
 import Subscribe from '../components/subscribe';
+import Head from 'next/head';
 
 const IndexPage = () => {
-  return (
+  return (<>
+  <Head>
+  <meta name="google-site-verification" content="zPnMGLNYLN_89V82xeiJFDE--NWuF5B0ponVI_iguKA" />
+  <meta name="msvalidate.01" content="3846A2694A3BBD31ACD111EC5E58A93E" />
+  </Head>
+ 
     <Layout>
       <PageIntro />
 
@@ -80,7 +86,7 @@ const IndexPage = () => {
       <ProductsFeatured />
       <Subscribe />
       <Footer />
-    </Layout>
+    </Layout>  </>
   )
 }
 

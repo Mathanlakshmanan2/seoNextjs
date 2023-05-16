@@ -15,8 +15,6 @@ export default ({ children, title = 'Next.js Ecommerce' }: LayoutType) => {
     <div className="app-main">
       <Head>
         <meta charSet="utf-8" />
-        <meta name="google-site-verification" content="zPnMGLNYLN_89V82xeiJFDE--NWuF5B0ponVI_iguKA" />
-        <meta name="msvalidate.01" content="3846A2694A3BBD31ACD111EC5E58A93E" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{ title }</title>
         <meta name="description" content="Get powerful prescription medications from our online store - all without leaving your home! All of our medications come with a 100% satisfaction guarantee."/>
