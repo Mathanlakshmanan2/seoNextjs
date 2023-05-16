@@ -23,6 +23,7 @@ export default ({ children, title = 'Next.js Ecommerce' }: LayoutType) => {
         <meta property="og:url" content="https://snipcart.com/"/>
         <meta property="og:type" content="website"/>
         <meta name="google-site-verification" content="zPnMGLNYLN_89V82xeiJFDE--NWuF5B0ponVI_iguKA" />
+        <meta name="msvalidate.01" content="3846A2694A3BBD31ACD111EC5E58A93E" />
       </Head>
 
       <Header />
