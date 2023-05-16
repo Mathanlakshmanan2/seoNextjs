@@ -22,6 +22,7 @@ export default ({ children, title = 'Next.js Ecommerce' }: LayoutType) => {
         <meta property="og:description" content="Find the best drugs, vitamins, and supplements at the best prices in your area with our online store"/>
         <meta property="og:url" content="https://snipcart.com/"/>
         <meta property="og:type" content="website"/>
+        <meta name="google-site-verification" content="zPnMGLNYLN_89V82xeiJFDE--NWuF5B0ponVI_iguKA" />
       </Head>
 
       <Header />
