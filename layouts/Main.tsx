@@ -17,7 +17,6 @@ export default ({ children, title = 'Next.js Ecommerce' }: LayoutType) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{ title }</title>
-        <meta name="google-site-verification" content="zPnMGLNYLN_89V82xeiJFDE--NWuF5B0ponVI_iguKA" />
         <meta name="description" content="Get powerful prescription medications from our online store - all without leaving your home! All of our medications come with a 100% satisfaction guarantee."/>
         <meta property="og:title" content="medicine | drug stores near me	| weight loss | tarnea | madurai | bangolore | online medicals madurai"/>
         <meta property="og:description" content="Find the best drugs, vitamins, and supplements at the best prices in your area with our online store"/>
