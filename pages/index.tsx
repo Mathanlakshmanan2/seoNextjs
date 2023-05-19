@@ -4,12 +4,55 @@ import ProductsFeatured from '../components/products-featured';
 import Footer from '../components/footer';
 import Subscribe from '../components/subscribe';
 import Head from 'next/head';
+import React, { useEffect } from 'react';
 
 const IndexPage = () => {
+
+  useEffect(() => {
+    getLocation();
+  }, []);
+
+  const getLocation = ()=> {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }
+
+  function showPosition(position:any) {
+    console.log("Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude);
+    
+    fetch(`https://api.opencagedata.com/geocode/v1/json?key=8b64b224655d40fea07d6150dd9c9868&q=${position.coords.latitude}, ${position.coords.longitude}`, {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
+  .then(response => response.json())
+  .then(data => localStorage.setItem("current_location",JSON.stringify(data.results[0].components.suburb)));
+  
+  }
+  
+
+
   return (<>
   <Head>
   <meta name="google-site-verification" content="zPnMGLNYLN_89V82xeiJFDE--NWuF5B0ponVI_iguKA" />
   <meta name="msvalidate.01" content="3846A2694A3BBD31ACD111EC5E58A93E" />
+  <meta name="keywords" content="Get Free shipping, more offers,	 Home delivery,  Mathan online store madurai,  Tamilnadu, bangalore, online fashion store" />
+  <meta name="title" content="Get Free shipping, more offers,	 Home delivery,  Mathan online store madurai,  Tamilnadu, bangalore, online fashion store"/>
+  <meta name="description" content="clothing store in the heart of downtown that offers chic and stylish clothing for both men and women. From romantic lace and flowy maxi dresses to edgy leather jackets and timeless trench coats, budget-friendly clothing store that has colorful and trendy pieces for men and women. Their selection of graphic tees, sweatpants and joggers, and sneakers"/>
+  <meta property="og:title" content="Mathan Ecommerce store | Get Free shipping | more offers	| Home delivery | Mathan online store madurai | Tamilnadu | bangalore | online fashion store"/>
+  <meta property="og:description" content="clothing store in the heart of downtown that offers chic and stylish clothing for both men and women. From romantic lace and flowy maxi dresses to edgy leather jackets and timeless trench coats, budget-friendly clothing store that has colorful and trendy pieces for men and women. Their selection of graphic tees, sweatpants and joggers, and sneakers"/>
+  <meta property="og:url" content="https://eshopfashion.000webhostapp.com/"/>
+  <meta property="og:type" content="website"/>
+  <meta name="DC.title" content="Mathan Ecommerce store | Get Free shipping | more offers	| Home delivery | Mathan online store madurai | Tamilnadu | bangalore | online fashion store" />
+  <meta name="geo.region" content="IN-TN" />
+  <meta name="geo.placename" content="madurai" />
+  <meta name="geo.position" content="22.351115;78.667743" />
+  <meta name="ICBM" content="22.351115, 78.667743" />
   </Head>
  
     <Layout>

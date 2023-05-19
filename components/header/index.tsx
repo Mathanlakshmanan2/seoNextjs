@@ -18,9 +18,10 @@ const Header = ({ isErrorPage }: HeaderType) => {
   const [onTop, setOnTop] = useState(( !arrayPaths.includes(router.pathname) || isErrorPage ) ? false : true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [location, setLocation] = useState('');
   const navRef = useRef(null);
   const searchRef = useRef(null);
-
+  let location_temp :any;
   const headerClass = () => {
     if(window.pageYOffset === 0) {
       setOnTop(true);
@@ -38,6 +39,11 @@ const Header = ({ isErrorPage }: HeaderType) => {
     window.onscroll = function() {
       headerClass();
     };
+    location_temp = localStorage.getItem("current_location");
+    // location = JSON.parse(location_temp)
+    // console.log(location);
+    setLocation(JSON.parse(location_temp))
+     
   }, []);
 
   const closeMenu = () => {
@@ -55,6 +61,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
   return(
     <header className={`site-header ${!onTop ? 'site-header--fixed' : ''}`}>
       <div className="container">
+       
         <Link href="/">
           <a><h1 className="site-logo"><Logo />E-Shop</h1></a>
         </Link>
@@ -66,8 +73,9 @@ const Header = ({ isErrorPage }: HeaderType) => {
           <a href="#">Rooms</a>
           <button className="site-nav__btn"><p>Account</p></button>
         </nav>
-
+        
         <div className="site-header__actions">
+          <a href="#">{location}</a>
           <button ref={searchRef} className={`search-form-wrapper ${searchOpen ? 'search-form--active' : ''}`}>
             <form className={`search-form`}>
               <i className="icon-cancel" onClick={() => setSearchOpen(!searchOpen)}></i>
